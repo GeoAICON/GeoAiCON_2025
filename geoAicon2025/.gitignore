@@ -1,0 +1,81 @@
+# Dependency directories
+node_modules/
+/jspm_packages/
+
+# Next.js build output
+.next/
+/out/
+
+# Production build
+/build
+/dist
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# OS specific files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Temporal files
+*.tmp
+*.temp
+
+# Project-specific "Waste" Exclusions (Template leftovers)
+/app/index1/
+/app/index2/
+/app/index3/
+/app/index4/
+/app/index5/
+/app/index7/
+/app/index8/
+/app/index9/
+/app/index10/
+/components/sections/home1/
+/components/sections/home2/
+/components/sections/home3/
+/components/sections/home4/
+/components/sections/home5/
+/components/sections/home7/
+/components/sections/home8/
+/components/sections/home9/
+/components/sections/home10/
+/components/layout/header/Header[1-5].tsx
+/components/layout/header/Header[7-9].tsx
+/components/layout/header/Header10.tsx
+/components/layout/footer/Footer[1-5].tsx
+/components/layout/footer/Footer[7-9].tsx
+/components/layout/footer/Footer10.tsx
