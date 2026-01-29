@@ -10,7 +10,7 @@ export default function Footer6() {
 						<div className="col-lg-3 col-md-6">
 							<div className="footer-logo-area">
 								<Link href="/" className="text-decoration-none">
-									<h2 className="m-0 text-white fw-bold" style={{fontSize: '28px', letterSpacing: '-0.5px'}}>
+									<h2 className="m-0 text-dark fw-bold" style={{fontSize: '28px', letterSpacing: '-0.5px'}}>
 										GeoAI <span className="text-primary">CON</span>
 									</h2>
 								</Link>
