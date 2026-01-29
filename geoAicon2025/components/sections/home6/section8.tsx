@@ -1,5 +1,6 @@
 'use client'
 import Slider from "react-slick"
+import Link from 'next/link'
 
 const settings = {
 	loop: true,
@@ -114,8 +115,6 @@ const settings2 = {
 		]
 }
 
-import Link from 'next/link'
-
 export default function Section8() {
 	return (
 		<>
@@ -125,9 +124,9 @@ export default function Section8() {
 					<div className="row">
 						<div className="col-lg-6 m-auto">
 							<div className="testimonial-heading heading9 text-center space-margin60">
-								<h5><img src="/assets/img/icons/sub-logo1.svg" alt="" />Testimonials</h5>
+								<h5><img src="/assets/img/icons/sub-logo1.svg" alt="" />Participant Voices</h5>
 								<div className="space20" />
-								<h2 className="text-anime-style-3">What Our Attendees Say</h2>
+								<h2 className="text-anime-style-3">Why the Community is Joining</h2>
 							</div>
 						</div>
 					</div>
@@ -135,65 +134,39 @@ export default function Section8() {
 						<div className="col-lg-12">
 							<Slider {...settings} className="testimonial-reviews-area">
 								<div className="testimonial-boxarea">
-									<p>“The hands-on drone mapping tutorial at IIT Ropar was a highlight. Practical and incredibly insightful for our team.”</p>
-									<Link href="/#">Dr. Amit Sharma</Link>
+									<p>“The hands-on tutorial on drone data processing at IIT Ropar is exactly what my research group needs.”</p>
+									<Link href="/#">Amit S., PhD Scholar</Link>
 								</div>
 								<div className="testimonial-boxarea">
-									<p>“Geo-AI CON successfully bridged the gap between academic research and real-world industry applications.”</p>
-									<Link href="/#">Engr. Priya Rao</Link>
+									<p>“I am excited about the hybrid mode, allowing me to present our work on Urban GeoAI from the UK.”</p>
+									<Link href="/#">Sarah J., Postdoc Researcher</Link>
 								</div>
 								<div className="testimonial-boxarea">
-									<p>“The networking with global experts in GIS and AI was invaluable. I left with many new project ideas.”</p>
-									<Link href="/#">Rahul V., Research Scholar</Link>
+									<p>“The opportunity to publish in a Scopus-indexed volume without APC is a significant benefit for academic researchers.”</p>
+									<Link href="/#">Dr. P. Verma, Asst. Professor</Link>
 								</div>
 								<div className="testimonial-boxarea">
-									<p>“A must-attend event for anyone working at the intersection of Geospatial data and Artificial Intelligence.”</p>
-									<Link href="/#">Michael S., Tech Lead</Link>
+									<p>“Looking forward to networking with experts from SEnSRS and learning about river sand mining sustainability.”</p>
+									<Link href="/#">Rajesh K., Environmental Engineer</Link>
 								</div>
 							</Slider>
 							<div className="space24" />
 							<Slider {...settings2} className="testimonial-reviews-area2">
 								<div className="testimonial-boxarea">
-									<p>“The networking opportunities were unparalleled. Beyond the valuable sessions, I found
-										myself in meaningful conversations with other attendees who shared similar challenges.”
-									</p>
-									<Link href="/#">Sarah M.</Link>
+									<p>“The focus on practical Advanced Surveying instruments alongside AI theory is very promising.”</p>
+									<Link href="/#">Civil Engineering Dept. Head</Link>
 								</div>
 								<div className="testimonial-boxarea">
-									<p>“From the well-organized sessions to the exceptional lineup of speakers, everything about
-										this summit was top-notch. It was a fantastic opportunity to learn about the latest
-										trends.”</p>
-									<Link href="/#">Lisa M.</Link>
+									<p>“Geo-AI CON 2025 seems like the perfect platform to discuss the future of spatial analytics in India.”</p>
+									<Link href="/#">Tech Lead, GIS Startup</Link>
 								</div>
 								<div className="testimonial-boxarea">
-									<p>“Incredible speakers and invaluable networking opportunities. I left feeling inspired.”
-									</p>
-									<Link href="/#">David K.</Link>
+									<p>“I am eager to attend the keynote sessions on Earth Observation and its AI applications.”</p>
+									<Link href="/#">M.Sc. Geoinformatics Student</Link>
 								</div>
 								<div className="testimonial-boxarea">
-									<p>“An amazing opportunity to connect with leaders and like-minded professionals.”</p>
-									<Link href="/#">Jason W.</Link>
-								</div>
-								<div className="testimonial-boxarea">
-									<p>“I’ve attended many industry events, but this summit was a standout. The variety of
-										sessions kept things engaging, and I appreciated how the content was tailored for
-										different experience levels.”</p>
-									<Link href="/#">Sarah M.</Link>
-								</div>
-								<div className="testimonial-boxarea">
-									<p>“It’s rare to find an event that’s both inspiring and practical. This one nailed it.”</p>
-									<Link href="/#">Lisa M.</Link>
-								</div>
-								<div className="testimonial-boxarea">
-									<p>“Incredible speakers and invaluable networking opportunities. I left feeling inspired.”
-									</p>
-									<Link href="/#">David K.</Link>
-								</div>
-								<div className="testimonial-boxarea">
-									<p>“The summit offered a great mix of theory and practice. I appreciated how the workshops
-										dug deep into practical strategies while the keynote sessions inspired me to think
-										bigger.”</p>
-									<Link href="/#">Jason W.</Link>
+									<p>“Connecting with detailed hands-on sessions is rare in such conferences. Highly anticipated.”</p>
+									<Link href="/#">Research Fellow, ISRO</Link>
 								</div>
 							</Slider>
 						</div>

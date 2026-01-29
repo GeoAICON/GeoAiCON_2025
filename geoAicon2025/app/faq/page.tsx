@@ -1,29 +1,81 @@
 'use client'
-import Countdown from '@/components/elements/Countdown'
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
-import { useState } from "react"
-export default function Faq() {
-	const [isTab, setIsTab] = useState(1)
-	const handleTab = (i: number) => {
-		setIsTab(i)
-	}
-	const [isAccordion, setIsAccordion] = useState(1)
+import { useState, useEffect } from "react"
+import AOS from 'aos'
+import styles from './faq.module.css'
 
-const handleAccordion = (key: any) => {
-    setIsAccordion(prevState => prevState === key ? null : key)
-}
+export default function Faq() {
+	const [activeTab, setActiveTab] = useState('All')
+	const [activeAccordion, setActiveAccordion] = useState<number | null>(null)
+
+	const toggleAccordion = (index: number) => {
+		setActiveAccordion(prev => prev === index ? null : index)
+	}
+
+	const faqData = [
+		{
+			category: 'Event Information',
+			questions: [
+				{
+					id: 1,
+					q: "What is Geo-AI CON 2025?",
+					a: "Geo-AI CON 2025 is a premier summit focusing on the intersection of Geospatial Science and Artificial Intelligence, organized by SEnSRS, IIT Ropar. It brings together experts, researchers, and industry leaders to discuss the latest advancements in Geo-AI."
+				},
+				{
+					id: 2,
+					q: "When and where will the conference take place?",
+					a: "The conference is scheduled from 5th to 8th September 2025. It will be held at the Indian Institute of Technology (IIT) Ropar in Punjab, India. The venue offers state-of-the-art facilities for a productive and engaging conference experience."
+				},
+				{
+					id: 5,
+					q: "Can I attend online?",
+					a: "Yes, the conference offers a hybrid model with specific online technical sessions for remote participants. However, we highly recommend attending in person to fully benefit from networking opportunities and hands-on workshops."
+				}
+			]
+		},
+		{
+			category: 'Registration',
+			questions: [
+				{
+					id: 3,
+					q: "Are there any publication opportunities?",
+					a: "Yes, accepted and presented papers will be submitted for publication in Scopus-indexed proceedings. Selected high-quality papers may also be considered for special issues in reputed journals."
+				},
+				{
+					id: 4,
+					q: "How can I register for the event?",
+					a: "Registration can be done through our official website. Early bird registration offers discounted rates. Please visit the 'Registration' page for detailed fee structures and deadlines."
+				},
+				{
+					id: 6,
+					q: "Is there accommodation available?",
+					a: "Limited accommodation is available at the IIT Ropar guest house and hostels on a paid basis. We also have tie-ups with nearby hotels. Detailed information will be shared with registered participants."
+				}
+			]
+		}
+	]
+
+	// Filter FAQs based on active tab
+	const filteredFaqs = activeTab === 'All' 
+		? faqData.flatMap(cat => cat.questions)
+		: faqData.find(cat => cat.category === activeTab)?.questions || []
+
+	useEffect(() => {
+		AOS.refresh()
+	}, [activeTab, activeAccordion])
+
 	return (
 		<>
-
 			<Layout headerStyle={6} footerStyle={6}>
+				{/* Standard Header */}
 				<div>
 					<div className="inner-page-header" style={{ backgroundImage: 'url(/assets/img/bg/header-bg17.png)', backgroundSize: 'cover' }}>
 						<div className="container">
 							<div className="row">
 								<div className="col-lg-9 m-auto">
 									<div className="heading1 text-center">
-										<h1>Frequently Asked Question</h1>
+										<h1>Frequently Asked Questions</h1>
 										<div className="space20" />
 										<Link href="/" className="text-white">Home <i className="fa-solid fa-angle-right" /> <span>FAQ</span></Link>
 									</div>
@@ -31,100 +83,90 @@ const handleAccordion = (key: any) => {
 							</div>
 						</div>
 					</div>
-					{/*===== HERO AREA ENDS =======*/}
-					{/*===== FAQ AREA STARTS =======*/}
-					<div className="faq-inner-section-area sp1">
+
+					{/* Premium FAQ Section */}
+					<div className={styles.sectionPadding}>
 						<div className="container">
-							<div className="row">
-								<div className="col-lg-7 m-auto">
-									<div className="heading6 text-center space-margin60">
-										<h5 className="text-primary">FAQ,s</h5>
-										<div className="space18" />
-										<h2>Common Questions</h2>
-									</div>
+							{/* Intro */}
+							<div className={styles.introSection} data-aos="fade-up" data-aos-duration="800">
+								<span className={styles.subTitle}>Common Queries</span>
+								<h2 className={styles.mainTitle}>Everything You Need to Know</h2>
+								<p className={styles.description}>
+									Find answers to the most common questions about Geo-AI CON 2025. 
+									Can't find what you're looking for? Feel free to contact us.
+								</p>
+							</div>
+
+							{/* Tabs */}
+							<div className={styles.tabsContainer} data-aos="fade-up" data-aos-delay="100">
+								<div className={styles.navPills}>
+									<button 
+										className={`${styles.tabButton} ${activeTab === 'All' ? styles.activeTab : ''}`}
+										onClick={() => setActiveTab('All')}
+									>
+										All Questions
+									</button>
+									<button 
+										className={`${styles.tabButton} ${activeTab === 'Event Information' ? styles.activeTab : ''}`}
+										onClick={() => setActiveTab('Event Information')}
+									>
+										Event Info
+									</button>
+									<button 
+										className={`${styles.tabButton} ${activeTab === 'Registration' ? styles.activeTab : ''}`}
+										onClick={() => setActiveTab('Registration')}
+									>
+										Registration & Papers
+									</button>
 								</div>
 							</div>
-							<div className="row">
-								<div className="col-lg-11 m-auto">
-									<div className="faq-widget-area">
-										<ul className="nav nav-pills justify-content-center" id="pills-tab" role="tablist">
-											<li className="nav-item" onClick={() => handleTab(1)}>
-												<button className={isTab == 1 ? "nav-link active" : "nav-link"} id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">All</button>
-											</li>
-											<li className="nav-item" onClick={() => handleTab(2)}>
-												<button className={isTab == 2 ? "nav-link active" : "nav-link"} id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Event Information</button>
-											</li>
-											<li className="nav-item" onClick={() => handleTab(3)}>
-												<button className={isTab == 3 ? "nav-link active" : "nav-link"} id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Registration</button>
-											</li>
-										</ul>
-										<div className="space48" />
-										<div className="tab-content" id="pills-tabContent">
-											<div className={isTab == 1 ? "tab-pane fade show active" : "tab-pane fade"} id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabIndex={0}>
-												<div className="faq-section-area">
-													<div className="row">
-														<div className="col-lg-6">
-															<div className="accordian-area">
-																<div className="accordion" id="accordionExample">
-																	<div className="accordion-item shadow-sm border-0 mb-3">
-																		<h2 className="accordion-header" onClick={() => handleAccordion (1)}>
-																			<button className={isAccordion == 1 ? "accordion-button" : "accordion-button collapsed"} type="button">What is Geo-AI CON 2025?</button>
-																		</h2>
-																		<div className={isAccordion == 1 ? "accordion-collapse collapse show" : "accordion-collapse collapse"}>
-																			<div className="accordion-body text-muted">
-																				Geo-AI CON 2025 is a premier summit focusing on the intersection of Geospatial Science and Artificial Intelligence, organized by SEnSRS, IIT Ropar.
-																			</div>
-																		</div>
-																	</div>
-																	<div className="accordion-item shadow-sm border-0 mb-3">
-																		<h2 className="accordion-header" onClick={() => handleAccordion (2)}>
-																			<button className={isAccordion == 2 ? "accordion-button" : "accordion-button collapsed"} type="button">When will the conference take place?</button>
-																		</h2>
-																		<div className={isAccordion == 2 ? "accordion-collapse collapse show" : "accordion-collapse collapse"}>
-																			<div className="accordion-body text-muted">
-																				The conference is scheduled from 5th to 8th September 2025 at IIT Ropar, Punjab, India.
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div className="col-lg-6">
-															<div className="accordian-area">
-																<div className="accordion" id="accordionExample2">
-																	<div className="accordion-item shadow-sm border-0 mb-3">
-																		<h2 className="accordion-header" onClick={() => handleAccordion (3)}>
-																			<button className={isAccordion == 3 ? "accordion-button" : "accordion-button collapsed"} type="button">Are there any publication opportunities?</button>
-																		</h2>
-																		<div className={isAccordion == 3 ? "accordion-collapse collapse show" : "accordion-collapse collapse"}>
-																			<div className="accordion-body text-muted">
-																				Yes, accepted and presented papers will be submitted for publication in Scopus-indexed proceedings.
-																			</div>
-																		</div>
-																	</div>
-																	<div className="accordion-item shadow-sm border-0 mb-3">
-																		<h2 className="accordion-header" onClick={() => handleAccordion (4)}>
-																			<button className={isAccordion == 4 ? "accordion-button" : "accordion-button collapsed"} type="button">Can I attend online?</button>
-																		</h2>
-																		<div className={isAccordion == 4 ? "accordion-collapse collapse show" : "accordion-collapse collapse"}>
-																			<div className="accordion-body text-muted">
-																				Yes, the conference offers a hybrid model with specific online technical sessions for remote participants.
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
+
+							{/* Filtering Content */}
+							<div className="row justify-content-center">
+								<div className="col-lg-10">
+									<div className={styles.accordionGrid} key={activeTab}>
+										{filteredFaqs.map((faq, index) => (
+											<div 
+												key={faq.id} 
+												className={`${styles.accordionItem} ${activeAccordion === faq.id ? styles.active : ''}`}
+												data-aos="fade-up"
+												data-aos-delay={100 + (index * 50)}
+											>
+												<div className={styles.accordionHeader} onClick={() => toggleAccordion(faq.id)}>
+													<h3 className={styles.question}>{faq.q}</h3>
+													<div className={styles.iconBox}>
+														<i className="fa-solid fa-chevron-down"></i>
+													</div>
+												</div>
+												<div 
+													className={styles.accordionBody}
+													style={{ maxHeight: activeAccordion === faq.id ? '500px' : '0' }}
+												>
+													<div className={styles.answerContent}>
+														{faq.a}
 													</div>
 												</div>
 											</div>
-										</div>
+										))}
 									</div>
 								</div>
 							</div>
+
+							{/* CTA Section */}
+							<div className={styles.ctaSection} data-aos="fade-up" data-aos-delay="300">
+								<div className={styles.ctaBox}>
+									<h3 className={styles.ctaTitle}>Still have questions?</h3>
+									<p className={styles.ctaText}>
+										We're here to help! Reach out to our organizing team for further assistance.
+									</p>
+									<Link href="/contact" className={styles.ctaButton}>
+										Contact Support <i className="fa-solid fa-arrow-right"></i>
+									</Link>
+								</div>
+							</div>
+
 						</div>
 					</div>
-
 				</div>
 			</Layout>
 		</>

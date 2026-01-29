@@ -15,7 +15,11 @@ const handleAccordion = (key: any) => {
 					<div className="col-12">
 						<div className="mobile-header-elements">
 							<div className="mobile-logo">
-								<Link href="//"><img src="/assets/img/logo/logo1.png" alt="" /></Link>
+								<Link href="/" className="text-decoration-none">
+									<h2 className="m-0 text-primary fw-bold" style={{fontSize: '24px', letterSpacing: '-0.5px'}}>
+										GeoAI <span className="text-dark">CON</span>
+									</h2>
+								</Link>
 							</div>
 							<div className="mobile-nav-icon dots-menu" onClick={handleMobileMenu}>
 								<i className="fa-solid fa-bars-staggered" />
@@ -27,7 +31,11 @@ const handleAccordion = (key: any) => {
 			<div className={`mobile-sidebar mobile-sidebar1 ${isMobileMenu ? 'mobile-menu-active' : ''}`}>
 				<div className="logosicon-area">
 					<div className="logos">
-						<img src="/assets/img/logo/logo2.png" alt="" />
+						<Link href="/" className="text-decoration-none">
+							<h2 className="m-0 text-white fw-bold" style={{fontSize: '28px', letterSpacing: '-0.5px'}}>
+								GeoAI <span className="text-primary">CON</span>
+							</h2>
+						</Link>
 					</div>
 					<div className="menu-close" onClick={handleMobileMenu}>
 						<i className="fa-solid fa-xmark" />

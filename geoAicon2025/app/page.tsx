@@ -10,12 +10,14 @@ import Section6 from '@/components/sections/home6/section6'
 import Section7 from '@/components/sections/home6/section7'
 import Section8 from '@/components/sections/home6/section8'
 import Section9 from '@/components/sections/home6/section9'
+import HighlightsCarousel from "@/components/sections/home6/HighlightsCarousel"
 
 export default function Home() {
 	return (
 		<>
 			<Layout headerStyle={6} footerStyle={6}>
 				<Section1 />
+				<HighlightsCarousel />
 				<Section3 />
 				<Section4 />
 				<Section5 />

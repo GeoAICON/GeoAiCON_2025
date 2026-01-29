@@ -1,14 +1,11 @@
 'use client'
 import CountUp from 'react-countup'
-import Countdown from '@/components/elements/Countdown'
 import Layout from "@/components/layout/Layout"
-import BrandSlider from '@/components/slider/BrandSlider'
 import Link from "next/link"
-export default function About() {
 
+export default function About() {
 	return (
 		<>
-
 			<Layout headerStyle={6} footerStyle={6}>
 				<div>
 					<div className="inner-page-header" style={{ backgroundImage: 'url(/assets/img/bg/header-bg17.png)', backgroundSize: 'cover' }}>
@@ -24,7 +21,7 @@ export default function About() {
 							</div>
 						</div>
 					</div>
-					{/*===== HERO AREA ENDS =======*/}
+
 					{/*===== ABOUT AREA STARTS =======*/}
 					<div className="about6-section-area sp1">
 						<div className="container">
@@ -32,37 +29,46 @@ export default function About() {
 								<div className="col-lg-6">
 									<div className="about-imges">
 										<div className="img1 reveal image-anime">
-											<img src="/assets/img/all-images/about/geo-ai-about.png" alt="Geo-AI Drone" />
+											<img src="/assets/img/all-images/about/geo-ai-about.png" alt="Geo-AI Conference IIT Ropar" />
 										</div>
 									</div>
 								</div>
 								<div className="col-lg-6">
 									<div className="about-header-area heading6 ps-lg-4">
-										<h5 data-aos="fade-left" data-aos-duration={800}><img src="/assets/img/icons/sub-logo1.svg" alt="" />ABOUT THE SUMMIT</h5>
+										<h5 data-aos="fade-left" data-aos-duration={800}>
+											<img src="/assets/img/icons/sub-logo1.svg" alt="" />
+											THEME: GEOSPATIAL ARTIFICIAL INTELLIGENCE
+										</h5>
 										<div className="space16" />
-										<h2 className="text-anime-style-3">Bridging Geospatial Science & Artificial Intelligence</h2>
+										<h2 className="text-anime-style-3">Pioneering the Future of Geospatial Innovation</h2>
 										<div className="space16" />
-										<p data-aos="fade-left" data-aos-duration={900}>Geo-AI CON 2025 is a premier gathering of scientists, researchers, and industry leaders focused on the intersection of Geospatial technology and AI. Organized by the Centre of Excellence (SEnSRS) at IIT Ropar, we aim to foster innovation in field surveying and data analytics.</p>
+										<p data-aos="fade-left" data-aos-duration={900}>
+											Geo-AI CON 2025 is a premier academic summit dedicated to the convergence of Geospatial Science and Artificial Intelligence. Organized by the Centre of Excellence in Socio-Environmental Sustainability for River Sand Mining (SEnSRS) at IIT Ropar, this conference serves as a global platform for researchers, academicians, and industry professionals to exchange groundbreaking ideas and foster interdisciplinary collaboration.
+										</p>
+										<div className="space16" />
+										<p data-aos="fade-left" data-aos-duration={900}>
+											The conference focuses on cutting-edge advancements in GeoAI, Earth Observation, Drone Mapping, Advanced Surveying, and Spatial Analytics. By integrating rigorous academic research with practical applications, we aim to address complex socio-environmental challenges and drive innovation in the geospatial domain.
+										</p>
 										<div className="space32" />
 										<div className="about-counter-area bg-light p-4 rounded shadow-sm">
 											<div className="row">
 												<div className="col-4 text-center">
-													<h2 className="text-primary"><CountUp className="odometer" enableScrollSpy={true} end={50} />+</h2>
-													<p>Speakers</p>
-												</div>
-												<div className="col-4 text-center border-start">
 													<h2 className="text-primary"><CountUp className="odometer" enableScrollSpy={true} end={10} />+</h2>
-													<p>Tutorials</p>
+													<p>Keynote Speakers</p>
 												</div>
 												<div className="col-4 text-center border-start">
-													<h2 className="text-primary"><CountUp className="odometer" enableScrollSpy={true} end={500} />+</h2>
-													<p>Attendees</p>
+													<h2 className="text-primary"><CountUp className="odometer" enableScrollSpy={true} end={6} />+</h2>
+													<p>Technical Sessions</p>
+												</div>
+												<div className="col-4 text-center border-start">
+													<h2 className="text-primary"><CountUp className="odometer" enableScrollSpy={true} end={4} /></h2>
+													<p>Days (Hybrid)</p>
 												</div>
 											</div>
 										</div>
 										<div className="space32" />
 										<div className="btn-area1" data-aos="fade-left" data-aos-duration={1200}>
-											<Link href="/pricing-plan" className="vl-btn6">Register Now <img src="/assets/img/icons/arrow2.svg" alt="" /></Link>
+											<Link href="/pricing-plan" className="vl-btn6">Registration Details <img src="/assets/img/icons/arrow2.svg" alt="" /></Link>
 										</div>
 									</div>
 								</div>
@@ -70,31 +76,14 @@ export default function About() {
 						</div>
 					</div>
 					{/*===== ABOUT AREA ENDS =======*/}
-					{/*===== OTHERS AREA STARTS =======*/}
-					<div className="brands3-section-area sp2">
-						<div className="container">
-							<div className="row">
-								<div className="col-lg-5 m-auto">
-									<div className="brand-header heading4 space-margin60 text-center">
-										<h3>Join 4,000+ companies already growing</h3>
-									</div>
-								</div>
-							</div>
-							<div className="row">
-								<div className="col-lg-12" data-aos="zoom-in" data-aos-duration={800}>
-									<BrandSlider />
-								</div>
-							</div>
-						</div>
-					</div>
-					{/*===== OTHERS AREA ENDS =======*/}
-					{/*===== OTHERS AREA STARTS =======*/}
+
+					{/*===== HIGHLIGHTS AREA STARTS =======*/}
 					<div className="choose-section-area sp2 bg-light">
 						<div className="container">
 							<div className="row">
 								<div className="col-lg-6 m-auto">
 									<div className="heading9 text-center space-margin60">
-										<h5 className="text-primary">WHY CHOOSE US</h5>
+										<h5 className="text-primary">CONFERENCE HIGHLIGHTS</h5>
 										<div className="space18" />
 										<h2>Why Attend Geo-AI CON?</h2>
 									</div>
@@ -108,8 +97,8 @@ export default function About() {
 										</div>
 										<div className="space24" />
 										<div className="content-area">
-											<h4 className="mb-3">Advanced Tutorials</h4>
-											<p>Hands-on experience with state-of-the-art instruments and modern field surveying techniques guided by domain experts.</p>
+											<h4 className="mb-3">Hands-on Tutorials</h4>
+											<p>Expert-led practical sessions focusing on modern field surveying instruments, drone data processing, and advanced geospatial AI methodologies.</p>
 										</div>
 									</div>
 								</div>
@@ -121,7 +110,7 @@ export default function About() {
 										<div className="space24" />
 										<div className="content-area">
 											<h4 className="mb-3">Scopus Publication</h4>
-											<p>All accepted and registered papers will be published in a Scopus-Indexed Edited Volume (Taylor & Francis/Springer).</p>
+											<p>Accepted papers will be published in Scopus-indexed proceedings (Taylor & Francis / Springer) with NO Article Processing Charges (APC).</p>
 										</div>
 									</div>
 								</div>
@@ -133,13 +122,14 @@ export default function About() {
 										<div className="space24" />
 										<div className="content-area">
 											<h4 className="mb-3">Expert Networking</h4>
-											<p>Connect with leading researchers and industry professionals from across the globe in a collaborative environment.</p>
+											<p>A unique opportunity to connect with distinguished academicians, scientists, and industry leaders in a collaborative research environment.</p>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+					{/*===== HIGHLIGHTS AREA ENDS =======*/}
 
 				</div>
 			</Layout>

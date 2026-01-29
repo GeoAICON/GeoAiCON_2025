@@ -10,7 +10,11 @@ export default function Header6({ scroll, isMobileMenu, handleMobileMenu, isSear
 							<div className="col-lg-12">
 								<div className="header-elements">
 									<div className="site-logo">
-										<Link href="/"><img src="/assets/img/logo/logo4.png" alt="" /></Link>
+										<Link href="/" className="text-decoration-none">
+											<h2 className="m-0 text-primary fw-bold" style={{fontSize: '28px', letterSpacing: '-0.5px'}}>
+												GeoAI <span className="text-dark">CON</span>
+											</h2>
+										</Link>
 									</div>
 									<div className="main-menu">
 										<ul>
