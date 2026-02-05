@@ -27,19 +27,24 @@ export default function Speakers() {
 						<div className="container">
 							<div className="row">
 								{[
-									{ name: "Prof. Biswajeet Pradhan", role: "UTS, Australia", img: "/assets/img/all-images/team/team-img20.png" },
-									{ name: "Prof. Mahesh Kumar Jat", role: "MNIT Jaipur", img: "/assets/img/all-images/team/team-img21.png" },
-									{ name: "Prof. Akshar Tripathi", role: "IIT Patna", img: "/assets/img/all-images/team/team-img22.png" },
-									{ name: "Prof. Avik Bhattacharya", role: "IIT Bombay", img: "/assets/img/all-images/team/team-img23.png" },
-									{ name: "Prof. Mahesh Pal", role: "NIT Kurukshetra", img: "/assets/img/all-images/team/team-img20.png" },
-									{ name: "Prof. Ajanta Goswami", role: "IIT Roorkee", img: "/assets/img/all-images/team/team-img21.png" },
+									{ name: "Prof. Biswajeet Pradhan", role: "UTS, Australia", img: "/speakers/Biswajeet Pradhan.jpg" },
+									{ name: "Prof. Mahesh Kumar Jat", role: "MNIT Jaipur", img: "/speakers/Mahesh Jaat.jpg" },
+									{ name: "Prof. Akshar Tripathi", role: "IIT Patna", img: "/speakers/Akshar Tripathy.jpg" },
+									{ name: "Prof. Avik Bhattacharya", role: "IIT Bombay", img: "/speakers/Avik Bhattacharya.jpg" },
+									{ name: "Prof. Mahesh Pal", role: "NIT Kurukshetra", img: "/speakers/Mahesh Pal.jpg" },
+									{ name: "Prof. Ajanta Goswami", role: "IIT Roorkee", img: "/speakers/Ajanta Goswami.jpg" },
 									{ name: "Prof. Prashant Kumar Srivastav", role: "BHU", img: "/assets/img/all-images/team/team-img22.png" }
 								].map((speaker, index) => (
 									<div className="col-lg-3 col-md-6 mb-4" key={index}>
 										<div className="our-team-boxarea shadow-sm rounded p-3 h-100 bg-white">
 											<div className="team-widget-area">
 												<div className="img1">
-													<img src={speaker.img} alt={speaker.name} className="img-fluid rounded" />
+													<img 
+														src={speaker.img} 
+														alt={speaker.name} 
+														className="img-fluid rounded" 
+														style={{ height: '320px', width: '100%', objectFit: 'cover' }}
+													/>
 													<div className="share">
 														<Link href="#"><img src="/assets/img/icons/share1.svg" alt="" /></Link>
 													</div>

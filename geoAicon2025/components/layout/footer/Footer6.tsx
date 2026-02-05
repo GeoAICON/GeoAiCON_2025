@@ -10,9 +10,12 @@ export default function Footer6() {
 						<div className="col-lg-3 col-md-6">
 							<div className="footer-logo-area">
 								<Link href="/" className="text-decoration-none">
-									<h2 className="m-0 text-dark fw-bold" style={{fontSize: '28px', letterSpacing: '-0.5px'}}>
-										GeoAI <span className="text-primary">CON</span>
-									</h2>
+									<img 
+										src="/GeoAiConLogo.png" 
+										alt="GeoAiCon Logo" 
+										className="img-fluid mb-2"
+										style={{ height: '90px', width: 'auto', objectFit: 'contain' }} 
+									/>
 								</Link>
 								<div className="space16" />
 								<p>We are committed to creating a platform where geospatial leaders, innovators, and professionals

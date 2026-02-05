@@ -16,9 +16,7 @@ const handleAccordion = (key: any) => {
 						<div className="mobile-header-elements">
 							<div className="mobile-logo">
 								<Link href="/" className="text-decoration-none">
-									<h2 className="m-0 text-primary fw-bold" style={{fontSize: '24px', letterSpacing: '-0.5px'}}>
-										GeoAI <span className="text-dark">CON</span>
-									</h2>
+									<img src="/GeoAiConLogo.png" alt="GeoAiCon Logo" className="img-fluid" style={{ height: '55px', width: 'auto', objectFit: 'contain' }} />
 								</Link>
 							</div>
 							<div className="mobile-nav-icon dots-menu" onClick={handleMobileMenu}>
@@ -30,13 +28,9 @@ const handleAccordion = (key: any) => {
 			</div>
 			<div className={`mobile-sidebar mobile-sidebar1 ${isMobileMenu ? 'mobile-menu-active' : ''}`}>
 				<div className="logosicon-area">
-					<div className="logos">
 						<Link href="/" className="text-decoration-none">
-							<h2 className="m-0 text-white fw-bold" style={{fontSize: '28px', letterSpacing: '-0.5px'}}>
-								GeoAI <span className="text-primary">CON</span>
-							</h2>
+							<img src="/GeoAiConLogo.png" alt="GeoAiCon Logo" className="img-fluid" style={{ height: '55px', width: 'auto', objectFit: 'contain' }} />
 						</Link>
-					</div>
 					<div className="menu-close" onClick={handleMobileMenu}>
 						<i className="fa-solid fa-xmark" />
 					</div>
