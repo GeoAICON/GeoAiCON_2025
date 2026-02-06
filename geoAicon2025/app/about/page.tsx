@@ -36,7 +36,7 @@ export default function About() {
 								<div className="col-lg-6">
 									<div className="about-header-area heading6 ps-lg-4">
 										<h5 data-aos="fade-left" data-aos-duration={800}>
-											<img src="/assets/img/icons/sub-logo1.svg" alt="" />
+		
 											THEME: GEOSPATIAL ARTIFICIAL INTELLIGENCE
 										</h5>
 										<div className="space16" />

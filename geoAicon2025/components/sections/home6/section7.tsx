@@ -10,7 +10,7 @@ export default function Section7() {
 					<div className="row">
 						<div className="col-lg-6 m-auto">
 							<div className="pricing-heading heading9 text-center space-margin60">
-								<h5><img src="/assets/img/icons/sub-logo1.svg" alt="" /> REGISTRATION</h5>
+								<h5>REGISTRATION</h5>
 								<div className="space20" />
 								<h2 className="text-anime-style-3">Registration Fees</h2>
 							</div>

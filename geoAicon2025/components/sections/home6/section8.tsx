@@ -124,7 +124,7 @@ export default function Section8() {
 					<div className="row">
 						<div className="col-lg-6 m-auto">
 							<div className="testimonial-heading heading9 text-center space-margin60">
-								<h5><img src="/assets/img/icons/sub-logo1.svg" alt="" />Participant Voices</h5>
+								<h5>Participant Voices</h5>
 								<div className="space20" />
 								<h2 className="text-anime-style-3">Why the Community is Joining</h2>
 							</div>

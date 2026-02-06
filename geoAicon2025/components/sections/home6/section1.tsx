@@ -22,7 +22,6 @@ export default function Section1() {
 						<div className="col-lg-10">
 							<div className="hero6-header">
 								<h5 data-aos="fade-up" data-aos-duration="800">
-									<img src="/assets/img/icons/sub-logo1.svg" alt="" className="me-2" />
 									Geo-AI CON 2025
 								</h5>
 								<div className="space16" />

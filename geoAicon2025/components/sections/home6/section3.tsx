@@ -19,7 +19,6 @@ export default function Section3() {
 						<div className="col-lg-6">
 							<div className="about6-header heading9">
 								<h5 data-aos="fade-left" data-aos-duration={700} className="mb-3 d-flex align-items-center gap-2">
-									<img src="/assets/img/icons/sub-logo1.svg" alt="" width={20} />
 									About Geo-AI CON 2025
 								</h5>
 								

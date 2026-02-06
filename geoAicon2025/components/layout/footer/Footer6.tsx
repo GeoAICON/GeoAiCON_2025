@@ -23,16 +23,10 @@ export default function Footer6() {
 								<div className="space24" />
 								<ul>
 									<li>
-										<Link href="/#"><i className="fa-brands fa-facebook-f" /></Link>
+										<Link href="https://www.facebook.com/profile.php?id=61582803331985"><i className="fa-brands fa-facebook-f" /></Link>
 									</li>
 									<li>
-										<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-									</li>
-									<li>
-										<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
-									</li>
-									<li>
-										<Link href="/#" className="m-0"><i className="fa-brands fa-pinterest-p" /></Link>
+										<Link href="https://www.linkedin.com/groups/15392053/"><i className="fa-brands fa-linkedin-in" /></Link>
 									</li>
 								</ul>
 							</div>

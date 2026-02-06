@@ -11,7 +11,6 @@ export default function Section4() {
 						<div className="col-lg-8 m-auto">
 							<div className="event-heading heading9 text-center mb-5">
 								<h5 className="mb-3 d-inline-flex align-items-center gap-2">
-                                    <img src="/assets/img/icons/sub-logo1.svg" alt="" width={18}/> 
                                     Schedule
                                 </h5>
 								<h2 className="text-anime-style-3">Detailed Event Schedule</h2>

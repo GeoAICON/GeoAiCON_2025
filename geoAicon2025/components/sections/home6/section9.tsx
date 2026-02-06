@@ -11,7 +11,6 @@ export default function Section9() {
 						<div className="col-lg-8 m-auto">
 							<div className="brand-header heading9 mb-5 text-center">
 								<h5 className="mb-3 d-inline-flex align-items-center gap-2">
-                                    <img src="/assets/img/icons/sub-logo1.svg" alt="" width={18}/> 
                                     PARTNERS
                                 </h5>
 								<h2 className="text-anime-style-3">Industry Partners</h2>

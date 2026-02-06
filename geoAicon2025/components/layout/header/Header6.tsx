@@ -29,6 +29,13 @@ export default function Header6({ scroll, isMobileMenu, handleMobileMenu, isSear
 											<li><Link href="/event-schedule">Schedule</Link></li>
 											<li><Link href="/pricing-plan">Registration</Link></li>
 											<li>
+												<Link href="#">Gallery <i className="fa-solid fa-angle-down" /></Link>
+												<ul className="dropdown-padding">
+													<li><Link href="/gallery/photos">Photo Gallery</Link></li>
+													<li><Link href="/gallery/technical-sessions">Technical Sessions</Link></li>
+												</ul>
+											</li>
+											<li>
 												<Link href="#">Pages <i className="fa-solid fa-angle-down" /></Link>
 												<ul className="dropdown-padding">
 													<li><Link href="/faq">FAQ,s</Link></li>
@@ -43,16 +50,10 @@ export default function Header6({ scroll, isMobileMenu, handleMobileMenu, isSear
 										</div>
 										<ul>
 											<li>
-												<Link href="/#"><i className="fa-brands fa-facebook-f" /></Link>
+												<Link href="https://www.facebook.com/profile.php?id=61582803331985"><i className="fa-brands fa-facebook-f" /></Link>
 											</li>
 											<li>
-												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-											</li>
-											<li>
-												<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
-											</li>
-											<li>
-												<Link href="/#" className="m-0"><i className="fa-brands fa-pinterest-p" /></Link>
+												<Link href="https://www.linkedin.com/groups/15392053/"><i className="fa-brands fa-linkedin-in" /></Link>
 											</li>
 										</ul>
 									</div>

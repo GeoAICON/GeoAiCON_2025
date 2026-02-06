@@ -20,6 +20,7 @@
     "react-slick": "^0.30.2",
     "sass": "^1.81.0",
     "slick-carousel": "^1.8.1",
+    "styled-components": "^6.3.8",
     "swiper": "^11.1.14",
     "wowjs": "^1.1.3"
   },

@@ -43,6 +43,14 @@ const handleAccordion = (key: any) => {
 						<li className="hash-has-sub"><Link href="/event-schedule" className="hash-nav" onClick={handleMobileMenu}>Schedule</Link></li>
 						<li className="hash-has-sub"><Link href="/pricing-plan" className="hash-nav" onClick={handleMobileMenu}>Registration</Link></li>
 						<li className="has-sub hash-has-sub">
+							<span className={`submenu-button ${isAccordion  == 6 ? "submenu-opened" : ""}`} onClick={() => handleAccordion (6)}><em /></span>
+							<Link href="/#" className="hash-nav">Gallery</Link>
+							<ul className={`sub-menu ${isAccordion  == 6 ? "open-sub" : ""}`} style={{ display: `${isAccordion  == 6 ? "block" : "none"}` }}>
+								<li className="hash-has-sub"><Link href="/gallery/photos" className="hash-nav" onClick={handleMobileMenu}>Photo Gallery</Link></li>
+								<li className="hash-has-sub"><Link href="/gallery/technical-sessions" className="hash-nav" onClick={handleMobileMenu}>Technical Sessions</Link></li>
+							</ul>
+						</li>
+						<li className="has-sub hash-has-sub">
 							<span className={`submenu-button ${isAccordion  == 5 ? "submenu-opened" : ""}`} onClick={() => handleAccordion (5)}><em /></span>
 							<Link href="/#" className="hash-nav">Pages</Link>
 							<ul className={`sub-menu ${isAccordion  == 5 ? "open-sub" : ""}`} style={{ display: `${isAccordion  == 5 ? "block" : "none"}` }}>
@@ -88,9 +96,8 @@ const handleAccordion = (key: any) => {
 									<h3>Social Links</h3>
 									<div className="social-links-mobile-menu">
 										<ul>
-											<li><Link href="#"><i className="fa-brands fa-facebook-f" /></Link></li>
-											<li><Link href="#"><i className="fa-brands fa-instagram" /></Link></li>
-											<li><Link href="#"><i className="fa-brands fa-linkedin-in" /></Link></li>
+											<li><Link href="https://www.facebook.com/profile.php?id=61582803331985"><i className="fa-brands fa-facebook-f" /></Link></li>
+											<li><Link href="https://www.linkedin.com/groups/15392053/"><i className="fa-brands fa-linkedin-in" /></Link></li>
 										</ul>
 									</div>
 								</div>

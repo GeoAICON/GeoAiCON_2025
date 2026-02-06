@@ -11,7 +11,6 @@ export default function Section6() {
 						<div className="col-lg-6 m-auto">
 							<div className="team-heading heading9 text-center mb-5">
 								<h5 className="mb-3 d-inline-flex align-items-center gap-2">
-                                    <img src="/assets/img/icons/sub-logo1.svg" alt="" width={18}/> 
                                     EVENT SPEAKERS
                                 </h5>
 								<h2 className="text-anime-style-3">Keynote Speakers</h2>
