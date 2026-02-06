@@ -1,9 +1,11 @@
 'use client'
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
-import { useState } from "react"
+import Image from "next/image"
+import { useState, useCallback } from "react"
+import OptimizedGalleryImage from "@/components/elements/OptimizedGalleryImage"
 
-// Image data organized by category - sampling representative images from each category
+// Image data organized by category
 const galleryData = {
     sessions: {
         title: "Technical Sessions",
@@ -112,19 +114,27 @@ export default function TechnicalSessions() {
 
     const currentGallery = galleryData[activeCategory]
 
-    const openLightbox = (src: string, index: number) => {
+    const openLightbox = useCallback((src: string, index: number) => {
         setLightboxImage(src)
         setLightboxIndex(index)
-    }
+    }, [])
 
-    const navigateLightbox = (direction: 'prev' | 'next') => {
+    const closeLightbox = useCallback(() => {
+        setLightboxImage(null)
+    }, [])
+
+    const navigateLightbox = useCallback((direction: 'prev' | 'next') => {
         const images = currentGallery.images
         let newIndex = direction === 'next' ? lightboxIndex + 1 : lightboxIndex - 1
         if (newIndex >= images.length) newIndex = 0
         if (newIndex < 0) newIndex = images.length - 1
         setLightboxIndex(newIndex)
         setLightboxImage(images[newIndex])
-    }
+    }, [currentGallery.images, lightboxIndex])
+
+    const handleCategoryChange = useCallback((key: CategoryKey) => {
+        setActiveCategory(key)
+    }, [])
 
     return (
         <Layout headerStyle={1} footerStyle={1}>
@@ -135,14 +145,16 @@ export default function TechnicalSessions() {
                     style={{ 
                         backgroundColor: "rgba(0,0,0,0.95)", 
                         zIndex: 9999, 
-                        backdropFilter: "blur(10px)"
+                        backdropFilter: "blur(10px)",
+                        animation: "fadeIn 0.3s ease"
                     }}
+                    onClick={closeLightbox}
                 >
                     {/* Close button */}
                     <button 
                         className="position-absolute btn btn-link text-white fs-1 p-0"
                         style={{ top: "20px", right: "30px", zIndex: 10000 }}
-                        onClick={() => setLightboxImage(null)}
+                        onClick={closeLightbox}
                     >
                         <i className="fa-solid fa-xmark"></i>
                     </button>
@@ -158,24 +170,33 @@ export default function TechnicalSessions() {
                     <button 
                         className="position-absolute btn btn-link text-white fs-1 p-3"
                         style={{ left: "20px", top: "50%", transform: "translateY(-50%)" }}
-                        onClick={() => navigateLightbox('prev')}
+                        onClick={(e) => { e.stopPropagation(); navigateLightbox('prev'); }}
                     >
                         <i className="fa-solid fa-chevron-left"></i>
                     </button>
 
-                    {/* Image */}
-                    <img 
-                        src={lightboxImage} 
-                        alt="Full size" 
-                        className="img-fluid"
-                        style={{ maxHeight: "85vh", maxWidth: "85vw", objectFit: "contain", borderRadius: "8px" }}
-                    />
+                    {/* Image with Next.js optimization */}
+                    <div 
+                        className="position-relative" 
+                        style={{ maxHeight: "85vh", maxWidth: "85vw", width: "100%", height: "80vh" }}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <Image 
+                            src={lightboxImage} 
+                            alt="Full size" 
+                            fill
+                            className="object-fit-contain"
+                            style={{ borderRadius: "8px" }}
+                            sizes="85vw"
+                            priority
+                        />
+                    </div>
 
                     {/* Next button */}
                     <button 
                         className="position-absolute btn btn-link text-white fs-1 p-3"
                         style={{ right: "20px", top: "50%", transform: "translateY(-50%)" }}
-                        onClick={() => navigateLightbox('next')}
+                        onClick={(e) => { e.stopPropagation(); navigateLightbox('next'); }}
                     >
                         <i className="fa-solid fa-chevron-right"></i>
                     </button>
@@ -183,7 +204,7 @@ export default function TechnicalSessions() {
             )}
 
             <div>
-                {/* Hero Section - Matches other routes */}
+                {/* Hero Section */}
                 <div className="inner-page-header" style={{ backgroundImage: 'url(/assets/img/bg/header-bg17.png)', backgroundSize: 'cover' }}>
                     <div className="container">
                         <div className="row">
@@ -205,12 +226,13 @@ export default function TechnicalSessions() {
                             {categories.map((cat) => (
                                 <button
                                     key={cat.key}
-                                    onClick={() => setActiveCategory(cat.key)}
+                                    onClick={() => handleCategoryChange(cat.key)}
                                     className={`btn px-4 py-2 rounded-pill fw-medium d-flex align-items-center gap-2 ${
                                         activeCategory === cat.key 
                                             ? "btn-primary" 
                                             : "btn-outline-secondary"
                                     }`}
+                                    style={{ transition: "all 0.3s ease" }}
                                 >
                                     <i className={cat.icon}></i>
                                     {cat.label}
@@ -223,59 +245,36 @@ export default function TechnicalSessions() {
                 {/* Gallery Section */}
                 <section className="py-5">
                     <div className="container">
-                        {/* Category Header */}
-                        <div className="text-center mb-4">
+                        {/* Category Header with animation */}
+                        <div className="text-center mb-4" key={`header-${activeCategory}`} style={{ animation: "fadeIn 0.4s ease" }}>
                             <h2 className="h3 fw-bold mb-1">{currentGallery.title}</h2>
                             <p className="text-muted small mb-0">{currentGallery.description}</p>
                         </div>
 
-                        {/* Uniform Grid */}
-                        <div className="row g-3">
+                        {/* Optimized Grid - key forces re-mount on category change */}
+                        <div className="row g-3" key={`grid-${activeCategory}`}>
                             {currentGallery.images.map((src, index) => (
-                                <div key={index} className="col-6 col-md-4 col-lg-3">
-                                    <div 
-                                        className="position-relative overflow-hidden rounded-3 bg-light"
-                                        style={{ 
-                                            aspectRatio: "4/3",
-                                            cursor: "pointer",
-                                            transition: "transform 0.3s ease, box-shadow 0.3s ease"
-                                        }}
+                                <div key={`${activeCategory}-${index}`} className="col-6 col-md-4 col-lg-3">
+                                    <OptimizedGalleryImage
+                                        src={src}
+                                        alt="Technical Session"
                                         onClick={() => openLightbox(src, index)}
-                                        onMouseEnter={(e) => {
-                                            e.currentTarget.style.transform = "scale(1.03)"
-                                            e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.15)"
-                                        }}
-                                        onMouseLeave={(e) => {
-                                            e.currentTarget.style.transform = "scale(1)"
-                                            e.currentTarget.style.boxShadow = "none"
-                                        }}
-                                    >
-                                        <img 
-                                            src={src} 
-                                            alt="Technical Session"
-                                            className="w-100 h-100"
-                                            style={{ objectFit: "cover" }}
-                                            loading="lazy"
-                                        />
-                                        {/* Hover Overlay */}
-                                        <div 
-                                            className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center opacity-0"
-                                            style={{ 
-                                                background: "rgba(0,0,0,0.4)",
-                                                transition: "opacity 0.3s ease"
-                                            }}
-                                            onMouseEnter={(e) => e.currentTarget.style.opacity = "1"}
-                                            onMouseLeave={(e) => e.currentTarget.style.opacity = "0"}
-                                        >
-                                            <i className="fa-solid fa-expand text-white fa-lg"></i>
-                                        </div>
-                                    </div>
+                                        priority={index < 4}
+                                        index={index}
+                                    />
                                 </div>
                             ))}
                         </div>
                     </div>
                 </section>
             </div>
+
+            <style jsx global>{`
+                @keyframes fadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                }
+            `}</style>
         </Layout>
     )
 }
