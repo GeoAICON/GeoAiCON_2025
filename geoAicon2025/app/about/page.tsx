@@ -29,7 +29,7 @@ export default function About() {
 								<div className="col-lg-6">
 									<div className="about-imges">
 										<div className="img1 reveal image-anime">
-											<img src="/assets/img/all-images/about/geo-ai-about.png" alt="Geo-AI Conference IIT Ropar" />
+											<img src="/Landing/AboutEvent.jpg" alt="Geo-AI Conference IIT Ropar" className="w-100 rounded shadow-lg" />
 										</div>
 									</div>
 								</div>

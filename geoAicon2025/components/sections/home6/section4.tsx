@@ -24,7 +24,7 @@ export default function Section4() {
 								<div className="row align-items-center g-4">
 									<div className="col-lg-6">
 										<div className="img1 image-anime reveal">
-											<img src="/assets/img/all-images/event/event-img12.png" alt="Day 1" className="img-fluid w-100 rounded shadow-sm" />
+											<img src="/Landing/20250905_151115.jpg" alt="Day 1" className="img-fluid w-100 rounded shadow-sm" />
 										</div>
 									</div>
 									<div className="col-lg-6">
@@ -55,7 +55,7 @@ export default function Section4() {
 								<div className="row align-items-center g-4">
 									<div className="col-lg-6 order-lg-2">
 										<div className="img1 image-anime reveal">
-											<img src="/assets/img/all-images/event/event-img13.png" alt="Day 2" className="img-fluid w-100 rounded shadow-sm" />
+											<img src="/Landing/KeyNoteSeesion.jpg" alt="Day 2" className="img-fluid w-100 rounded shadow-sm" />
 										</div>
 									</div>
 									<div className="col-lg-6 order-lg-1">
@@ -86,7 +86,7 @@ export default function Section4() {
 								<div className="row align-items-center g-4">
 									<div className="col-lg-6">
 										<div className="img1 image-anime reveal">
-											<img src="/assets/img/all-images/event/event-img14.png" alt="Day 3" className="img-fluid w-100 rounded shadow-sm" />
+											<img src="/Landing/HandsOnTut.jpg" alt="Day 3" className="img-fluid w-100 rounded shadow-sm" />
 										</div>
 									</div>
 									<div className="col-lg-6">
@@ -116,7 +116,7 @@ export default function Section4() {
 								<div className="row align-items-center g-4">
 									<div className="col-lg-6 order-lg-2">
 										<div className="img1 image-anime reveal">
-											<img src="/assets/img/all-images/event/event-img12.png" alt="Day 4" className="img-fluid w-100 rounded shadow-sm" />
+											<img src="/Landing/Awards.jpg" alt="Day 4" className="img-fluid w-100 rounded shadow-sm" />
 										</div>
 									</div>
 									<div className="col-lg-6 order-lg-1">

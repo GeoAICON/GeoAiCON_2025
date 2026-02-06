@@ -1,7 +1,6 @@
 'use client'
 import Slider from "react-slick"
 import Link from 'next/link'
-import Image from 'next/image'
 
 const settings = {
 	dots: true,
@@ -55,8 +54,7 @@ export default function HighlightsCarousel() {
 					box-shadow: 0 25px 60px rgba(0,0,0,0.12);
 				}
 				.slide-img-wrapper {
-					height: 100%;
-					min-height: 400px;
+					height: 400px;
 					position: relative;
 					overflow: hidden;
 				}
@@ -104,12 +102,10 @@ export default function HighlightsCarousel() {
 								</div>
 								<div className="col-lg-5 order-1 order-lg-2">
 									<div className="slide-img-wrapper">
-										<Image 
-											src="/assets/img/all-images/about/carousel-1.png" 
+										<img 
+											src="/Landing/20250905_151115.jpg" 
 											alt="Keynote Sessions" 
-											fill 
-											className="object-fit-cover"
-											sizes="(max-width: 768px) 100vw, 50vw"
+											className="w-100 h-100 object-fit-cover position-absolute top-0 start-0"
 										/>
 									</div>
 								</div>
@@ -141,12 +137,10 @@ export default function HighlightsCarousel() {
 								</div>
 								<div className="col-lg-5 order-1 order-lg-2">
 									<div className="slide-img-wrapper">
-										<Image 
-											src="/assets/img/all-images/about/carousel-2.png" 
+										<img 
+											src="/Landing/20250907_123344.jpg" 
 											alt="Hands-on Tutorials" 
-											fill 
-											className="object-fit-cover"
-											sizes="(max-width: 768px) 100vw, 50vw"
+											className="w-100 h-100 object-fit-cover position-absolute top-0 start-0"
 										/>
 									</div>
 								</div>
@@ -162,15 +156,15 @@ export default function HighlightsCarousel() {
 									<div className="p-5 d-flex flex-column justify-content-center h-100">
 										<div>
 											<div className="d-inline-block bg-success bg-opacity-10 text-success fw-bold px-3 py-1 rounded-pill mb-4 text-uppercase" style={{fontSize: '0.8rem', letterSpacing: '1px'}}>
-												<i className="fa-solid fa-book-open me-2"></i>Academic Excellence
+												<i className="fa-solid fa-layer-group me-2"></i>Hands-on Training
 											</div>
-											<h2 className="display-6 fw-bold text-dark mb-3">Scopus-Indexed Publications</h2>
+											<h2 className="display-6 fw-bold text-dark mb-3">Advanced Surveying Techniques</h2>
 											<p className="text-muted fs-5 mb-4" style={{lineHeight: '1.7'}}>
-												Elevate your research profile. Accepted papers are published in reputed Springer or Taylor & Francis proceedings with <span className="text-success fw-bold">NO Article Processing Charges</span>.
+												Master modern field surveying. Gain practical experience with Total Station, DGPS, and advanced instruments.
 											</p>
 											<div className="d-flex align-items-center gap-3 mt-4">
-												<Link href="/pricing-plan" className="btn btn-success rounded-pill px-4 py-2 fw-bold shadow-sm">
-													Submit Abstract
+												<Link href="/event-schedule" className="btn btn-success rounded-pill px-4 py-2 fw-bold shadow-sm">
+													View Details
 												</Link>
 												<Link href="/contact" className="btn btn-link text-decoration-none text-dark fw-bold">
 													Contact Us <i className="fa-solid fa-arrow-right ms-1"></i>
@@ -181,12 +175,10 @@ export default function HighlightsCarousel() {
 								</div>
 								<div className="col-lg-5 order-1 order-lg-2">
 									<div className="slide-img-wrapper">
-										<Image 
-											src="/assets/img/all-images/about/carousel-3.png" 
+										<img 
+											src="/Landing/20250907_143624.jpg" 
 											alt="Scopus Publications" 
-											fill 
-											className="object-fit-cover"
-											sizes="(max-width: 768px) 100vw, 50vw"
+											className="w-100 h-100 object-fit-cover position-absolute top-0 start-0"
 										/>
 									</div>
 								</div>

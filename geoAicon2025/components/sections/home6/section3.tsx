@@ -11,7 +11,7 @@ export default function Section3() {
 							<div className="row">
 								<div className="col-lg-12">
 									<div className="img1 reveal image-anime">
-										<img src="/assets/img/all-images/about/geo-ai-about.png" alt="Geo-AI Summit" className="img-fluid w-100 rounded shadow-lg" />
+										<img src="/Landing/About.jpg" alt="Geo-AI Summit" className="img-fluid w-100 rounded shadow-lg" />
 									</div>
 								</div>
 							</div>

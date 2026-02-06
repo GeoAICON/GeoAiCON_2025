@@ -35,11 +35,12 @@ export default function Footer6() {
 							<div className="link-content">
 								<h3>Quick Links</h3>
 								<ul>
-									<li><Link href="/about">About Us</Link></li>
-									<li><Link href="/blog">Our Blogs</Link></li>
-									<li><Link href="/event">Event Listing</Link></li>
-									<li><Link href="/pricing-plan">Pricing Plan</Link></li>
-									<li><Link href="/contact">Contact Us</Link></li>
+									<li><Link href="/">Home</Link></li>
+									<li><Link href="/about">About Event</Link></li>
+									<li><Link href="/speakers">Speakers</Link></li>
+									<li><Link href="/event-schedule">Schedule</Link></li>
+									<li><Link href="/pricing-plan">Registration</Link></li>
+									<li><Link href="/faq">FAQ's</Link></li>
 								</ul>
 							</div>
 						</div>
@@ -68,58 +69,52 @@ export default function Footer6() {
 								<div className="space12" />
 								<div className="row">
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1">
-											<img src="/assets/img/all-images/footer/footer-img1.png" alt="" />
-											<div className="icons">
-												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-											</div>
+										<div className="img1 position-relative">
+											<Link href="/gallery/photos">
+												<img src="/Landing/20250905_151115.jpg" alt="Inauguration" className="w-100 rounded object-fit-cover" style={{ height: '80px' }} />
+											</Link>
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1">
-											<img src="/assets/img/all-images/footer/footer-img2.png" alt="" />
-											<div className="icons">
-												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-											</div>
+										<div className="img1 position-relative">
+											<Link href="/gallery/photos">
+												<img src="/Landing/KeyNoteSeesion.jpg" alt="Keynotes" className="w-100 rounded object-fit-cover" style={{ height: '80px' }} />
+											</Link>
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1">
-											<img src="/assets/img/all-images/footer/footer-img3.png" alt="" />
-											<div className="icons">
-												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-											</div>
+										<div className="img1 position-relative">
+											<Link href="/gallery/photos">
+												<img src="/Landing/HandsOnTut.jpg" alt="Tutorials" className="w-100 rounded object-fit-cover" style={{ height: '80px' }} />
+											</Link>
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1">
-											<img src="/assets/img/all-images/footer/footer-img4.png" alt="" />
-											<div className="icons">
-												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-											</div>
+										<div className="img1 position-relative">
+											<Link href="/gallery/photos">
+												<img src="/Landing/Awards.jpg" alt="Awards" className="w-100 rounded object-fit-cover" style={{ height: '80px' }} />
+											</Link>
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1">
-											<img src="/assets/img/all-images/footer/footer-img5.png" alt="" />
-											<div className="icons">
-												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-											</div>
+										<div className="img1 position-relative">
+											<Link href="/gallery/photos">
+												<img src="/Gallery/PhotoGallery/Inaugration/IMG_9794.jpg" alt="Gallery 1" className="w-100 rounded object-fit-cover" style={{ height: '80px' }} />
+											</Link>
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1">
-											<img src="/assets/img/all-images/footer/footer-img6.png" alt="" />
-											<div className="icons">
-												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-											</div>
+										<div className="img1 position-relative">
+											<Link href="/gallery/photos">
+												<img src="/Gallery/PhotoGallery/Selected/20250906_113054.jpg" alt="Gallery 2" className="w-100 rounded object-fit-cover" style={{ height: '80px' }} />
+											</Link>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div className="space60" />
+					<div className="space20" />
 					<div className="row">
 						<div className="col-lg-12">
 							<div className="copyright">
