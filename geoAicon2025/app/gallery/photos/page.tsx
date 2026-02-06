@@ -77,13 +77,15 @@ export default function PhotoGallery() {
     const [lightboxImage, setLightboxImage] = useState<string | null>(null)
     const [lightboxIndex, setLightboxIndex] = useState<number>(0)
 
+
+    const currentGallery = galleryData[activeCategory]
+
     const categories: { key: CategoryKey; label: string; icon: string }[] = [
         { key: "inauguration", label: "Inauguration", icon: "fa-solid fa-ribbon" },
         { key: "organizers", label: "Organizers", icon: "fa-solid fa-users" },
         { key: "selected", label: "Selected Pics", icon: "fa-solid fa-star" },
     ]
 
-    const currentGallery = galleryData[activeCategory]
 
     const openLightbox = useCallback((src: string, index: number) => {
         setLightboxImage(src)
@@ -114,10 +116,9 @@ export default function PhotoGallery() {
                 <div 
                     className="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
                     style={{ 
-                        backgroundColor: "rgba(0,0,0,0.95)", 
+                        backgroundColor: "rgba(0,0,0,0.98)", 
                         zIndex: 9999, 
-                        backdropFilter: "blur(10px)",
-                        animation: "fadeIn 0.3s ease"
+                        animation: "fadeIn 0.2s ease-out"
                     }}
                     onClick={closeLightbox}
                 >
@@ -148,18 +149,23 @@ export default function PhotoGallery() {
 
                     {/* Image with Next.js optimization */}
                     <div 
-                        className="position-relative" 
-                        style={{ maxHeight: "85vh", maxWidth: "85vw", width: "100%", height: "80vh" }}
+                        className="position-relative d-flex align-items-center justify-content-center" 
+                        style={{ height: "90vh", width: "90vw" }}
                         onClick={(e) => e.stopPropagation()}
                     >
                         <Image 
+                            key={lightboxImage}
                             src={lightboxImage} 
                             alt="Full size" 
                             fill
-                            className="object-fit-contain"
-                            style={{ borderRadius: "8px" }}
-                            sizes="85vw"
+                            style={{ 
+                                objectFit: "contain",
+                                borderRadius: "8px",
+                                animation: "imageFade 0.2s ease-in-out"
+                            }}
+                            sizes="90vw"
                             priority
+                            quality={85}
                         />
                     </div>
 
@@ -244,6 +250,10 @@ export default function PhotoGallery() {
                 @keyframes fadeIn {
                     from { opacity: 0; }
                     to { opacity: 1; }
+                }
+                @keyframes imageFade {
+                    from { opacity: 0.5; transform: scale(0.98); }
+                    to { opacity: 1; transform: scale(1); }
                 }
             `}</style>
         </Layout>
