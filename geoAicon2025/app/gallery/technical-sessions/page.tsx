@@ -10,6 +10,7 @@ const galleryData = {
     sessions: {
         title: "Technical Sessions",
         description: "Presentations and discussions from expert speakers",
+        icon: "fa-solid fa-chalkboard-user",
         images: [
             "/Gallery/TechnicalSessions/Technical Sessions/20250905_150535.jpg",
             "/Gallery/TechnicalSessions/Technical Sessions/20250905_150608.jpg",
@@ -40,6 +41,7 @@ const galleryData = {
     drone: {
         title: "Tutorial: Drone Mapping",
         description: "Hands-on drone mapping and data processing workshop",
+        icon: "fa-solid fa-paper-plane",
         images: [
             "/Gallery/TechnicalSessions/Tutorial - 1 Drone Mapping/20250907_112451.jpg",
             "/Gallery/TechnicalSessions/Tutorial - 1 Drone Mapping/20250907_112500.jpg",
@@ -70,6 +72,7 @@ const galleryData = {
     surveying: {
         title: "Tutorial: Advanced Surveying",
         description: "Field surveying instruments and techniques workshop",
+        icon: "fa-solid fa-compass-drafting",
         images: [
             "/Gallery/TechnicalSessions/Tutorial - 2 Advanced Surveying Techiques/20250907_135316.jpg",
             "/Gallery/TechnicalSessions/Tutorial - 2 Advanced Surveying Techiques/20250907_135345.jpg",
@@ -108,7 +111,7 @@ export default function TechnicalSessions() {
 
     const categories: { key: CategoryKey; label: string; icon: string }[] = [
         { key: "sessions", label: "Technical Sessions", icon: "fa-solid fa-chalkboard-user" },
-        { key: "drone", label: "Drone Mapping", icon: "fa-solid fa-drone" },
+        { key: "drone", label: "Drone Mapping", icon: "fa-solid fa-paper-plane" },
         { key: "surveying", label: "Advanced Surveying", icon: "fa-solid fa-compass-drafting" },
     ]
 
@@ -145,11 +148,10 @@ export default function TechnicalSessions() {
                     style={{ 
                         backgroundColor: "rgba(0,0,0,0.98)", 
                         zIndex: 9999, 
-                        animation: "fadeIn 0.2s ease-out"
+                        animation: "tsFadeIn 0.2s ease-out"
                     }}
                     onClick={closeLightbox}
                 >
-                    {/* Close button */}
                     <button 
                         className="position-absolute btn btn-link text-white fs-1 p-0"
                         style={{ top: "20px", right: "30px", zIndex: 10000 }}
@@ -157,15 +159,11 @@ export default function TechnicalSessions() {
                     >
                         <i className="fa-solid fa-xmark"></i>
                     </button>
-
-                    {/* Image counter */}
                     <div className="position-absolute text-white" style={{ top: "30px", left: "30px" }}>
-                        <span className="badge bg-white bg-opacity-25 px-3 py-2 fs-6">
+                        <span className="badge px-3 py-2 fs-6" style={{ background: 'rgba(20,184,166,0.4)' }}>
                             {lightboxIndex + 1} / {currentGallery.images.length}
                         </span>
                     </div>
-
-                    {/* Prev button */}
                     <button 
                         className="position-absolute btn btn-link text-white fs-1 p-3"
                         style={{ left: "20px", top: "50%", transform: "translateY(-50%)" }}
@@ -173,8 +171,6 @@ export default function TechnicalSessions() {
                     >
                         <i className="fa-solid fa-chevron-left"></i>
                     </button>
-
-                    {/* Image with Next.js optimization */}
                     <div 
                         className="position-relative d-flex align-items-center justify-content-center" 
                         style={{ height: "90vh", width: "90vw" }}
@@ -188,15 +184,13 @@ export default function TechnicalSessions() {
                             style={{ 
                                 objectFit: "contain",
                                 borderRadius: "8px",
-                                animation: "imageFade 0.2s ease-in-out"
+                                animation: "tsImageFade 0.2s ease-in-out"
                             }}
                             sizes="90vw"
                             priority
                             quality={85}
                         />
                     </div>
-
-                    {/* Next button */}
                     <button 
                         className="position-absolute btn btn-link text-white fs-1 p-3"
                         style={{ right: "20px", top: "50%", transform: "translateY(-50%)" }}
@@ -223,23 +217,33 @@ export default function TechnicalSessions() {
                     </div>
                 </div>
 
-                {/* Category Tabs - Sticky */}
-                <section className="py-3 bg-white border-bottom position-sticky top-0" style={{ zIndex: 100 }}>
+                {/* Category Tabs — Teal accent */}
+                <section className="py-4 bg-white border-bottom position-sticky top-0" style={{ zIndex: 100 }}>
                     <div className="container">
                         <div className="d-flex flex-wrap justify-content-center gap-2">
                             {categories.map((cat) => (
                                 <button
                                     key={cat.key}
                                     onClick={() => handleCategoryChange(cat.key)}
-                                    className={`btn px-4 py-2 rounded-pill fw-medium d-flex align-items-center gap-2 ${
-                                        activeCategory === cat.key 
-                                            ? "btn-primary" 
-                                            : "btn-outline-secondary"
-                                    }`}
-                                    style={{ transition: "all 0.3s ease" }}
+                                    className="btn px-4 py-2 rounded-pill fw-medium d-flex align-items-center gap-2"
+                                    style={{
+                                        transition: 'all 0.3s ease',
+                                        background: activeCategory === cat.key ? 'linear-gradient(135deg, #0f766e, #14b8a6)' : 'transparent',
+                                        color: activeCategory === cat.key ? '#fff' : '#64748b',
+                                        border: activeCategory === cat.key ? 'none' : '1px solid #e2e8f0',
+                                        boxShadow: activeCategory === cat.key ? '0 4px 15px rgba(20,184,166,0.3)' : 'none'
+                                    }}
                                 >
                                     <i className={cat.icon}></i>
                                     {cat.label}
+                                    <span className="badge rounded-pill ms-1" style={{
+                                        background: activeCategory === cat.key ? 'rgba(255,255,255,0.25)' : '#f1f5f9',
+                                        color: activeCategory === cat.key ? '#fff' : '#94a3b8',
+                                        fontSize: '0.7rem',
+                                        padding: '3px 8px'
+                                    }}>
+                                        {galleryData[cat.key].images.length}
+                                    </span>
                                 </button>
                             ))}
                         </div>
@@ -247,25 +251,45 @@ export default function TechnicalSessions() {
                 </section>
 
                 {/* Gallery Section */}
-                <section className="py-5">
+                <section className="py-5" style={{ background: '#f0fdfa' }}>
                     <div className="container">
-                        {/* Category Header with animation */}
-                        <div className="text-center mb-4" key={`header-${activeCategory}`} style={{ animation: "fadeIn 0.4s ease" }}>
+                        {/* Category Header */}
+                        <div className="text-center mb-5" key={`header-${activeCategory}`} style={{ animation: "tsFadeIn 0.4s ease" }}>
+                            <div className="d-inline-flex align-items-center gap-2 mb-2">
+                                <i className={`${currentGallery.icon}`} style={{ color: '#0f766e' }}></i>
+                                <div style={{ width: '30px', height: '2px', background: 'linear-gradient(to right, #0f766e, #14b8a6)', borderRadius: '2px' }}></div>
+                            </div>
                             <h2 className="h3 fw-bold mb-1">{currentGallery.title}</h2>
                             <p className="text-muted small mb-0">{currentGallery.description}</p>
                         </div>
 
-                        {/* Optimized Grid - key forces re-mount on category change */}
+                        {/* Clean 3-column grid */}
                         <div className="row g-3" key={`grid-${activeCategory}`}>
                             {currentGallery.images.map((src, index) => (
-                                <div key={`${activeCategory}-${index}`} className="col-6 col-md-4 col-lg-3">
-                                    <OptimizedGalleryImage
-                                        src={src}
-                                        alt="Technical Session"
-                                        onClick={() => openLightbox(src, index)}
-                                        priority={index < 4}
-                                        index={index}
-                                    />
+                                <div key={`${activeCategory}-${index}`} className="col-6 col-md-4 col-lg-4">
+                                    <div style={{ position: 'relative' }}>
+                                        <OptimizedGalleryImage
+                                            src={src}
+                                            alt={`${currentGallery.title} - Image ${index + 1}`}
+                                            onClick={() => openLightbox(src, index)}
+                                            priority={index < 3}
+                                            index={index}
+                                            aspectRatio="16/11"
+                                        />
+                                        {/* Subtle numbered overlay */}
+                                        <div style={{
+                                            position: 'absolute',
+                                            bottom: '8px',
+                                            right: '12px',
+                                            fontSize: '0.65rem',
+                                            fontWeight: 700,
+                                            color: 'rgba(255,255,255,0.5)',
+                                            zIndex: 3,
+                                            pointerEvents: 'none'
+                                        }}>
+                                            {String(index + 1).padStart(2, '0')}
+                                        </div>
+                                    </div>
                                 </div>
                             ))}
                         </div>
@@ -274,11 +298,11 @@ export default function TechnicalSessions() {
             </div>
 
             <style jsx global>{`
-                @keyframes fadeIn {
-                    from { opacity: 0; }
-                    to { opacity: 1; }
+                @keyframes tsFadeIn {
+                    from { opacity: 0; transform: translateY(8px); }
+                    to { opacity: 1; transform: translateY(0); }
                 }
-                @keyframes imageFade {
+                @keyframes tsImageFade {
                     from { opacity: 0.5; transform: scale(0.98); }
                     to { opacity: 1; transform: scale(1); }
                 }

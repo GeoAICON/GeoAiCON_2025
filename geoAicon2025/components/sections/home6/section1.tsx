@@ -21,12 +21,12 @@ export default function Section1() {
 					<div className="row align-items-center justify-content-center text-center">
 						<div className="col-lg-10">
 							<div className="hero6-header">
-								<h5 data-aos="fade-up" data-aos-duration="800">
+								<h5 data-aos="fade-up" data-aos-duration={800}>
 									Geo-AI CON 2025
 								</h5>
 								<div className="space16" />
 								<h1 className="text-anime-style-3 text-white fw-bold" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.2rem)', lineHeight: '1.1', textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
-									GEOSPATIAL ARTIFICIAL INTELLIGENCE<br /> SUMMIT
+									GEOSPATIAL ARTIFICIAL INTELLIGENCE<br />SUMMIT
 								</h1>
 								<div className="space16" />
 								<p className="subtitle mx-auto" style={{ fontSize: '20px', color: '#fff', maxWidth: '800px', fontWeight: '500', textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>
