@@ -24,7 +24,7 @@ export default function Section4() {
 								<div className="row align-items-center g-4">
 									<div className="col-lg-6">
 										<div className="img1 image-anime reveal">
-											<img src="/Landing/20250905_151115.jpg" alt="Day 1" className="img-fluid w-100 rounded shadow-sm" />
+											<img src="/Gallery/PhotoGallery/Selected/IMG_9803.jpg" alt="Day 1" className="img-fluid w-100 rounded shadow-sm" />
 										</div>
 									</div>
 									<div className="col-lg-6">

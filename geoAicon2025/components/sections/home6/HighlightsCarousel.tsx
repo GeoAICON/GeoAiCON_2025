@@ -12,7 +12,7 @@ const slides = [
 		accentColor: '#3b82f6',
 		title: 'Visionary Keynote Sessions',
 		desc: 'Immerse yourself in groundbreaking discussions led by global pioneers in Geospatial AI. Discover how the convergence of satellite intelligence and deep learning is shaping the future.',
-		img: '/Landing/20250905_151115.jpg',
+		img: '/Gallery/PhotoGallery/Selected/20250906_115618.jpg',
 		cta: { label: 'Explore Speakers', href: '/speakers', style: 'btn-primary' },
 		cta2: { label: 'View Schedule', href: '/event-schedule' },
 	},
