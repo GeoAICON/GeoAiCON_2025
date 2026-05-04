@@ -11,7 +11,7 @@ export default function Footer6() {
 							<div className="footer-logo-area">
 								<Link href="/" className="text-decoration-none">
 									<img 
-										src="/GeoAiConLogo.png" 
+										src="/Logo1.png" 
 										alt="GeoAiCon Logo" 
 										className="img-fluid mb-2"
 										style={{ height: '90px', width: 'auto', objectFit: 'contain' }} 

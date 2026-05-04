@@ -32,6 +32,9 @@ const grotesk = Space_Grotesk({
 export const metadata: Metadata = {
 	title: "GeoAiCon 2025 - Event And Conference",
 	description: "GeoAiCon 2025 - Event And Conference Nextjs Template",
+	icons: {
+		icon: "/Logo1.png",
+	},
 }
 
 export default function RootLayout({

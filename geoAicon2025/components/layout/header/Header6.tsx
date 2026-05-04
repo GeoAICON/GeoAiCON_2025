@@ -12,7 +12,7 @@ export default function Header6({ scroll, isMobileMenu, handleMobileMenu, isSear
 									<div className="site-logo">
 										<Link href="/" className="text-decoration-none">
 											<img 
-												src="/GeoAiConLogo.png" 
+												src="/Logo1.png" 
 												alt="GeoAiCon Logo" 
 												className="img-fluid hover:scale-105 transition-transform duration-300"
 												style={{ height: '75px', width: 'auto', objectFit: 'contain', margin: '-10px 0' }} 
