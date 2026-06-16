@@ -15,8 +15,15 @@ const handleAccordion = (key: any) => {
 					<div className="col-12">
 						<div className="mobile-header-elements">
 							<div className="mobile-logo">
-								<Link href="/" className="text-decoration-none">
-									<img src="/Logo1.png" alt="GeoAiCon Logo" className="img-fluid" style={{ height: '55px', width: 'auto', objectFit: 'contain' }} />
+								<Link href="/" className="text-decoration-none d-flex align-items-center gap-2">
+									<img src="/Logo1.png" alt="GeoAiCon Logo" className="img-fluid" style={{ height: '35px', width: 'auto', objectFit: 'contain' }} />
+									<span style={{ 
+										fontSize: '20px', 
+										fontWeight: 700, 
+										letterSpacing: '-0.5px', 
+										color: '#0f172a',
+										fontFamily: 'var(--grotesk), sans-serif'
+									}}>GeoAI CON</span>
 								</Link>
 							</div>
 							<div className="mobile-nav-icon dots-menu" onClick={handleMobileMenu}>
@@ -28,8 +35,15 @@ const handleAccordion = (key: any) => {
 			</div>
 			<div className={`mobile-sidebar mobile-sidebar1 ${isMobileMenu ? 'mobile-menu-active' : ''}`}>
 				<div className="logosicon-area">
-						<Link href="/" className="text-decoration-none">
-							<img src="/Logo1.png" alt="GeoAiCon Logo" className="img-fluid" style={{ height: '55px', width: 'auto', objectFit: 'contain' }} />
+						<Link href="/" className="text-decoration-none d-flex align-items-center gap-2">
+							<img src="/Logo1.png" alt="GeoAiCon Logo" className="img-fluid" style={{ height: '35px', width: 'auto', objectFit: 'contain' }} />
+							<span style={{ 
+								fontSize: '20px', 
+								fontWeight: 700, 
+								letterSpacing: '-0.5px', 
+								color: '#0f172a',
+								fontFamily: 'var(--grotesk), sans-serif'
+							}}>GeoAI CON</span>
 						</Link>
 					<div className="menu-close" onClick={handleMobileMenu}>
 						<i className="fa-solid fa-xmark" />
@@ -97,6 +111,7 @@ const handleAccordion = (key: any) => {
 									<div className="social-links-mobile-menu">
 										<ul>
 											<li><Link href="https://www.facebook.com/profile.php?id=61582803331985"><i className="fa-brands fa-facebook-f" /></Link></li>
+											<li><Link href="https://www.instagram.com/geoaicon/"><i className="fa-brands fa-instagram" /></Link></li>
 											<li><Link href="https://www.linkedin.com/groups/15392053/"><i className="fa-brands fa-linkedin-in" /></Link></li>
 										</ul>
 									</div>

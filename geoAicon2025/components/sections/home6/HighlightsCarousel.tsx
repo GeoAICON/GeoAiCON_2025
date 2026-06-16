@@ -91,7 +91,7 @@ export default function HighlightsCarousel() {
 				.slide-number-indicator {
 					position: absolute;
 					top: 30px;
-					left: 30px;
+					right: 30px;
 					font-size: 5rem;
 					font-weight: 900;
 					line-height: 1;
@@ -139,7 +139,8 @@ export default function HighlightsCarousel() {
 					.slide-number-indicator {
 						font-size: 3rem;
 						top: 15px;
-						left: 15px;
+						right: 15px;
+						left: auto;
 					}
 				}
 			`}</style>
@@ -149,13 +150,13 @@ export default function HighlightsCarousel() {
 					{slides.map((slide, idx) => (
 						<div key={idx} className="px-2">
 							<div className="highlight-card-v2">
-								<div className="slide-number-indicator">0{idx + 1}</div>
 								<div className="row g-0">
 									<div className="col-lg-7 order-2 order-lg-1">
-										<div className="p-4 p-lg-5 d-flex flex-column justify-content-center h-100" style={{ 
+										<div className="p-4 p-lg-5 d-flex flex-column justify-content-center h-100 position-relative" style={{ 
 											borderLeft: `4px solid ${slide.accentColor}`,
 											minHeight: '420px'
 										}}>
+											<div className="slide-number-indicator">0{idx + 1}</div>
 											<div>
 												<div className="d-inline-block fw-bold px-3 py-1 rounded-pill mb-4 text-uppercase" style={{
 													fontSize: '0.75rem',
